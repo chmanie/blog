@@ -1,0 +1,32 @@
+baseurl = "/"
+languageCode = "en-us"
+title = "chmanie"
+theme = "xmin"
+googleAnalytics = ""
+disqusShortname = ""
+ignoreFiles = ["_files$", "_cache$"]
+footnotereturnlinkcontents = "↩"
+
+[permalinks]
+    post = "/post/:year/:month/:day/:slug/"
+    note = "/:slug/"
+
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 2
+[[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 3
+[[menu.main]]
+    name = "Subscribe"
+    url = "/index.xml"
+
+[params]
+    description = "random texts written by Christian Maniewski"
+    footer = "&copy; Christian Maniewski 2020 | [email](mailto:machine@chmanie.com) | [Github](https://github.com/chmanie) | [Twitter](https://twitter.com/chmanie)"
