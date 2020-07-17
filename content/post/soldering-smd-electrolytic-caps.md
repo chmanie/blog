@@ -7,8 +7,6 @@ categories:
 tags: [diy]
 ---
 
-# Soldering SMD electrolytic capacitors using a soldering iron
-
 For everyone struggling with the SMD electrolytic capacitors (I know I was!). Here's a method I found working for me (using a soldering iron).
 
 I'm using a 1.6mm chisel tip at 300deg C and soldering paste (plus a tiny bit of leaded solder). You'll also need some tweezers.

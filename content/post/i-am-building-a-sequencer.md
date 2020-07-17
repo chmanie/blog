@@ -7,8 +7,6 @@ categories:
 tags: [eurorack, sequencer, diy]
 ---
 
-# I am building a Eurorack sequencer from scratch with (almost) no prior knowledge
-
 *For the impatient: find the code [here](https://github.com/soundslikefrank/frank.counts)*
 
 ## Why?
