@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - generator
+      - master
 
 jobs:
   deploy:
@@ -13,21 +13,20 @@ jobs:
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+      - uses: wei/rclone@v1.1.1
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.73.0'
+          hugo-version: '0.74.3'
           # extended: true
 
       - name: Build
         run: hugo --minify
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: rclone
+        uses: wei/rclone@master
+        env:
+          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: master
-          publish_dir: ./public
-          force_orphan: true
-          cname: chmanie.com
+          args: copy public nextcloud:blog
