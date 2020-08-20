@@ -14,9 +14,9 @@ Let's say you have flashed your STM32 MCU but accidentally overwrote a GPIO conf
 Error: init mode failed (unable to connect to the target)
 ```
 
-There is a handy tool with the straightforward name [STM32 ST-LINK utility] which can be used to perform a [full chip erase](https://www.newbiehack.com/categories/newbiehack-tutorial-ARM-video9-created5202016113040AM-nomenu). Unfortunately this tool only works in Windows :(.
+There is a handy tool with the straightforward name [STM32 ST-LINK utility](https://www.st.com/en/development-tools/stsw-link004.html#get-software) which can be used to perform a [full chip erase](https://www.newbiehack.com/categories/newbiehack-tutorial-ARM-video9-created5202016113040AM-nomenu). Unfortunately this tool only works in Windows :(.
 
-So what we unix users are "stuck with" is [OpenOCD](http://openocd.org/) (which is awesome!). To wipe the flash we have to first put the device into reset mode. We can do this by pulling the `NRST` pin (see your chips reference manual) low. The blog post I linked to above has some more information on this.
+So what we unix users are "stuck with" is [OpenOCD](http://openocd.org/) (which is awesome!). To wipe the flash we have to first put the device into reset mode. We can do this by pulling the `NRST` pin (see your chip's reference manual) low. The blog post I linked to above has some more information on this.
 
 Users of discovery boards can just press and hold the reset button. Then you can issue the following command:
 
