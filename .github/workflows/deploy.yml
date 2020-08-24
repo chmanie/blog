@@ -28,4 +28,4 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          args: copy public nextcloud:blog
+          args: copy public blog:/
