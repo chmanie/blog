@@ -34,4 +34,4 @@ footnotereturnlinkcontents = "↩"
 
 [params]
     description = "random texts written by Christian Maniewski"
-    footer = "&copy; Christian Maniewski 2020 | [email](mailto:machine@chmanie.com) | [Github](https://github.com/chmanie) | [Twitter](https://twitter.com/chmanie)"
+    footer = "&copy; Christian Maniewski 2020-2022 | [email](mailto:machine@chmanie.com) | [SourceHut](https://git.sr.ht/~chmanie) | [Github](https://github.com/chmanie) | [Twitter](https://twitter.com/chmanie)"
