@@ -1,15 +1,18 @@
----
-layout: post
-title: "Soldering SMD electrolytic capacitors using a soldering iron"
-date: 2020-05-09
-categories:
-  - Synthesizer
-tags: [diy]
----
++++
+title = "Soldering SMD electrolytic capacitors using a soldering iron"
+date = 2020-05-09
+description = "A method for soldering SMD electrolytic capacitors using a soldering iron"
+
+[taxonomies]
+categories = ["Synthesizer"]
+tags = ["diy"]
++++
 
 For everyone struggling with the SMD electrolytic capacitors (I know I was!). Here's a method I found working for me (using a soldering iron).
 
 I'm using a 1.6mm chisel tip at 300deg C and soldering paste (plus a tiny bit of leaded solder). You'll also need some tweezers.
+
+<!-- more -->
 
 ### Step 1
 

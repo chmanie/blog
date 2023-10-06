@@ -1,37 +1,31 @@
-baseurl = "/"
-languageCode = "en-us"
-title = "chmanie"
-theme = "xmin"
-googleAnalytics = ""
-disqusShortname = ""
-ignoreFiles = ["_files$", "_cache$"]
-footnotereturnlinkcontents = "↩"
+# The URL the site will be built for
+base_url = "https://chmanie.com"
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
 
-[permalinks]
-    post = "/post/:year/:month/:day/:slug/"
-    note = "/:slug/"
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
 
-[[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-[[menu.main]]
-    name = "Categories"
-    url = "/categories/"
-    weight = 2
-[[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 3
-[[menu.main]]
-    name = "Subscribe"
-    url = "/index.xml"
+theme = "after-dark"
 
-[params]
-    description = "random texts written by Christian Maniewski"
-    footer = "&copy; Christian Maniewski 2020-2022 | [email](mailto:machine@chmanie.com) | [SourceHut](https://git.sr.ht/~chmanie) | [Github](https://github.com/chmanie) | [Twitter](https://twitter.com/chmanie)"
+taxonomies = [
+  { name = "categories", feed = true },
+  { name = "tags", feed = true },
+]
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+highlight_theme = "1337"
+
+[extra]
+after_dark_title = "chmanie.com - (very) random texts written by Chris Maniewski"
+author = "Chris"
+after_dark_menu = [
+    {url = "$BASE_URL", name = "Home"},
+    {url = "$BASE_URL/categories", name = "Categories"},
+    {url = "$BASE_URL/tags", name = "Tags"},
+]

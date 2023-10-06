@@ -1,22 +1,20 @@
++++
+title = "Debugging Arm-based microcontrollers in (Neo)vim with gdb"
+date = 2020-07-18
+updated = 2023-10-06
 
----
-layout: post
-title: "Debugging Arm-based microcontrollers in (Neo)vim with gdb"
-date: 2020-07-18
-categories:
-  - Programming
-tags: [arm, vim, c++, debugging]
----
+[taxonomies]
+categories = ["Programming"]
+tags = ["arm", "vim", "c++", "debugging"]
++++
 
 Coming from the JavaScript world, I'm used to the amazing debugging capabilities that browsers offer these days. I wanted to find a way to do debugging in a sensible way, covering the basics like setting breakpoints, skipping through them and doing variable inspection at runtime. Ideally I wanted to use vim for that as this is where I do all of my coding! I ended up finding an elegant solution (at least in my opinion) that I would like to share with you.
+
+<!-- more -->
 
 **Heads up! This is a guide targeted at macOS specifically! Build, installation and configuration instructions might differ for other UNIX based systems and _especially_ for windows**
 
 **Psst**: you also might want to check out the blog post I have written on how to set up a (Neo)vim dev environment for C(++) with all bells and whistles: [Modern C++ development in (Neo)vim](/post/2020/07/17/modern-c-development-in-neovim/)
-
-## See it in action!
-
-[![asciicast](https://asciinema.org/a/u6JReRp4qOqEjXVzCUTY0ETXV.svg)](https://asciinema.org/a/u6JReRp4qOqEjXVzCUTY0ETXV)
 
 In my examples I will sometimes refer to the STM32 libraries and the [STM32F3DISCOVERY](https://www.st.com/en/evaluation-tools/stm32f3discovery.html) board as that's what I'm using to test all this.
 
@@ -24,7 +22,7 @@ In my examples I will sometimes refer to the STM32 libraries and the [STM32F3DIS
 
 We will need the [GNU Arm Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads) which includes the Arm version of `gbd` (`arm-none-eabi-gdb`). You can easily install it via homebrew:
 
-```shell
+```bash
 brew cask install gcc-arm-embedded`
 ```
 
@@ -36,7 +34,7 @@ The `gdb`-server is the tool that actually connects to your microcontroller prog
 
 I highly recommend building openOCD from source as the homebrew formulas seem to be outdated. This is how I went about it:
 
-```shell
+```bash
 brew install autoconf automake texinfo
 git clone https://git.code.sf.net/p/openocd/code openocd-code
 cd openocd-code
@@ -50,13 +48,13 @@ See also [OpenOCD - Open On-Chip Debugger / Code](https://sourceforge.net/p/open
 
 Connect your board and run
 
-```shell
+```bash
 openocd -f board/stm32f4discovery.cfg # replace with your corresponding board / interface
 ```
 
 to see if it's working. If it looks something like this, we're in business!
 
-```txt
+```
 Info : STLINK V2J27M15 (API v2) VID:PID 0483:374B
 Info : Target voltage: 2.906461
 Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
@@ -66,7 +64,7 @@ Info : Listening on port 3333 for gdb connections
 
 You can also specify a custom interface and/or mcu target:
 
-```shell
+```bash
 openocd -f interface/stlink-v2-1.cfg -f target/stm32f3x.cfg
 ```
 
@@ -75,7 +73,7 @@ supported devices and targets.
 
 ## Configuring your project for gdb
 
-To connect our project to `gdb` we need to configure a few things within our project directory. I am using a [platformIO]() project as an example but if you know how to build your project in debug mode (`-g`) this shouldn't be a problem.
+To connect our project to `gdb` we need to configure a few things within our project directory. I am using a [platformIO](https://platformio.org/) project as an example but if you know how to build your project in debug mode (`-g`) this shouldn't be a problem.
 
 Create an `.gdbinit` file in the project directory. This will be executed every time the `gdb` client connects to the server:
 

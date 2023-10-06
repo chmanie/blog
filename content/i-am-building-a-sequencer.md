@@ -1,13 +1,17 @@
----
-layout: post
-title: "I am building a Eurorack sequencer from scratch with (almost) no prior knowledge"
-date: 2020-04-07
-categories:
-  - Synthesizer
-tags: [eurorack, sequencer, diy]
----
++++
+title = "I am building a Eurorack sequencer from scratch with (almost) no prior knowledge"
+date = 2020-04-07
+
+[taxonomies]
+categories = ["Synthesizer"]
+tags = ["eurorack", "sequencer", "diy"]
++++
+
+In this post I will document my journey of building a Eurorack sequencer from scratch. I will try to be as detailed as possible and include all the steps I'm taking. I will also try to include all the resources I'm using and all the mistakes I'm making. I hope this will be helpful for someone out there.
 
 *For the impatient: find the code [here](https://github.com/soundslikefrank/frank.counts)*
+
+<!-- more -->
 
 ## Why?
 

@@ -1,12 +1,15 @@
++++
+title = "Modern C++ development in (Neo)vim"
+date = 2020-07-17
 
----
-layout: post
-title: "Modern C++ development in (Neo)vim"
-date: 2020-07-17
-categories:
-  - Programming
-tags: [vim, c++]
----
+[taxonomies]
+categories = ["Programming"]
+tags = ["vim", "c++"]
++++
+
+In this post I will try to document my journey of setting up a modern C(++) development environment in (neo)vim.
+
+<!-- more -->
 
 ## tl;dr - What are we doing here?
 
@@ -55,7 +58,7 @@ Now that we have the LSP client (the vim plugin) set up we have to pick an actua
 I built the current release of ccls as described here:
 https://github.com/MaskRay/ccls/wiki/Build
 
-```shell
+```bash
 brew install llvm # install llvm first
 
 git clone --depth=1 --recursive https://github.com/MaskRay/ccls
@@ -67,7 +70,7 @@ cmake --build Release
 
 and installed it
 
-```shell
+```bash
 cmake --build Release --target install
 ```
 
@@ -79,7 +82,7 @@ In order to configure `ccls` for your project you will need to add a `.ccls` fil
 
 A very simple `.ccls` file might look like this:
 
-```shell
+```bash
 clang
 
 # add this to support `.h` files as C++ headers
@@ -156,7 +159,7 @@ Having proper linting in place can help tremendously to adhere to good coding st
 
 To install the command line tool do
 
-```shell
+```bash
 pip install cpplint
 ```
 
@@ -184,7 +187,7 @@ let g:syntastic_check_on_wq = 0
 
 Remember when you installed `llvm` earlier? If not, then now might be the perfect time to do so! It comes with a handful of wonderful tools that we can utilise for our quest.
 
-```shell
+```bash
 brew install llvm
 ```
 

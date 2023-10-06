@@ -1,16 +1,17 @@
++++
+title = "STM32 - Erasing the flash using OpenOCD"
+date = 2020-08-19
 
----
-layout: post
-title: "STM32 - Erasing the flash using OpenOCD"
-date: 2020-08-19
-categories:
-  - Embedded
-tags: [arm, openocd, stm32]
----
+[taxonomies]
+categories = ["Embedded"]
+tags = ["arm", "openocd", "stm32"]
++++
 
 Let's say you have flashed your STM32 MCU but accidentally overwrote a GPIO configuration used for ST-Link communication (discovery boards are prone to this). You might get the error message when trying to flash:
 
-```txt
+<!-- more -->
+
+```
 Error: init mode failed (unable to connect to the target)
 ```
 
@@ -20,13 +21,13 @@ So what we unix users are "stuck with" is [OpenOCD](http://openocd.org/) (which 
 
 Users of discovery boards can just press and hold the reset button. Then you can issue the following command:
 
-```shell
+```bash
 openocd -f interface/stlink-v2.cfg -f target/stm32f3x.cfg -c "init" -c "halt" -c "wait_halt" -c "stm32f1x mass_erase 0" -c "sleep 200" -c "reset run" -c "shutdown"
 ```
 
 You need to replace `target/stm32f3x.cfg` with the appropriate config file for your MCU. You can also try to use the configuration file for the discovery board that you're using:
 
-```shell
+```bash
 openocd -f board/stm32f3discovery.cfg -c "init" -c "halt" -c "wait_halt" -c "stm32f1x mass_erase 0" -c "sleep 200" -c "reset run" -c "shutdown"
 ```
 
@@ -34,7 +35,7 @@ This should have "unbricked" your device.
 
 During the process you might get the error:
 
-```txt
+```
 Error: timed out while waiting for target halted
 ```
 

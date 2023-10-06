@@ -1,14 +1,15 @@
++++
+title = "Switching from Bear to vim-based notes"
+date = 2020-08-28
 
----
-layout: post
-title: "Switching from Bear to vim-based notes"
-date: 2020-08-28
-categories:
-  - Meta
-tags: [vim, note-taking]
----
+[taxonomies]
+categories = ["Meta"]
+tags =  ["vim", "note-taking"]
++++
 
-It might not come as a surprise to you that I’m a heavy [vim](/post/2020/07/17/modern-c-development-in-neovim/) [user](/post/2020/07/18/debugging-arm-based-microcontrollers-in-neovim-with-gdb/). Whenever I write anything, I’d like for it to be inside of vim. This has been true for almost anything _except_ note-taking. Why? Because I like to take a lot of notes on the go (in fact, I started the draft of this blog post on my phone) and sync them with my laptop. The number of iOS-apps that play well with vim based solutions _and_ have pleasant use interface is quite small.
+It might not come as a surprise to you that I’m a heavy [vim](@/modern-c-development-in-neovim.md) [user](@/debugging-arm-based-microcontrollers-in-neovim.md). Whenever I write anything, I’d like for it to be inside of vim. This has been true for almost anything _except_ note-taking. Why? Because I like to take a lot of notes on the go (in fact, I started the draft of this blog post on my phone) and sync them with my laptop. The number of iOS-apps that play well with vim based solutions _and_ have pleasant use interface is quite small.
+
+<!-- more -->
 
 That’s why I’ve been using [Bear](https://bear.app/) to take notes in the past years. It works wonderfully and is a fantastic app for this use case (and the mobile app is almost perfect!). But... it’s not vim!
 
